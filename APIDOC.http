@@ -19,7 +19,7 @@ POST http://127.0.0.1:8000/api/accounts/login/
 Content-Type: application/json
 
 {
-    "username":"user456",
+    "username":"user123",
     "password":"password"
 }
 
@@ -31,7 +31,7 @@ POST http://127.0.0.1:8000/api/accounts/token/refresh/
 Content-Type: application/json
 
 {
-    "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5Mzc4NjM2MiwiaWF0IjoxNzkzNjk5OTYyLCJqdGkiOiIzYjMyNDUzNGYwMzM0ZGQzOGRkMzc3ZTcyNzFjODgwNiIsInVzZXJfaWQiOiIyIn0.HeLn_KNRbR41gDFespY69EWudbFES_IKILe5QEPv41o"
+    "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5Mzg3MzQwNiwiaWF0IjoxNzkzNzg3MDA2LCJqdGkiOiJjMmRjNGIyZjM4ODU0M2I0OGRlMzg5NTk0MTMzYzA3NSIsInVzZXJfaWQiOiIyIn0.Lp3sG7a-DERxx6akjbjEOAIrQzp-NmLRQLhW9Atqufw"
 }
 
 
@@ -48,15 +48,44 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 ###
 POST http://127.0.0.1:8000/api/leads/create/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzg2MTc0LCJpYXQiOjE3OTM3ODU4NzQsImp0aSI6IjM4MDRiZGU3OTNiNTQ1OWVhZDllOTU5MDk2ZDVlMzhkIiwidXNlcl9pZCI6IjMifQ.cWlRgElpKS47gVSHuT9fFLl4w4d1gHFFxtwGFIkdz68
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzg2OTMyLCJpYXQiOjE3OTM3ODY2MzIsImp0aSI6ImIxYzZhNjAwOWFlMDRmMjdiODBhYWQ0NWNjMzg1ZTJkIiwidXNlcl9pZCI6IjIifQ.Yfrm4Ya2zvrf-rTpR0W52Otw83OmQ3jcusRqy-nQ00A
 
 {
     "name": "jain antony",
     "email": "jain@gmail.com",
-    "phone": "82858798654",
+    "phone": "82858654",
     "company": "G tech It solutions",
     "source": "Social Media",
     "status": "Interested",
     "description": "Interested in our services"
 }
 
+
+#Api call for listing Leads (Userwise)
+###
+GET http://127.0.0.1:8000/api/leads/all/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzg2OTMyLCJpYXQiOjE3OTM3ODY2MzIsImp0aSI6ImIxYzZhNjAwOWFlMDRmMjdiODBhYWQ0NWNjMzg1ZTJkIiwidXNlcl9pZCI6IjIifQ.Yfrm4Ya2zvrf-rTpR0W52Otw83OmQ3jcusRqy-nQ00A
+
+
+#Api call for retriving id=1
+###
+GET http://127.0.0.1:8000/api/leads/1/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzg3MzMzLCJpYXQiOjE3OTM3ODcwMzMsImp0aSI6IjNjN2ZmMmMwYTU2MTQ2ZDZhMDEzZWEzZjMzOWYwMjU1IiwidXNlcl9pZCI6IjIifQ.httJuB6MFUhMF19Fp6Ags-pgxTuVvZnRoG0WC-zhnPA
+
+
+#Api call for updating id=4
+###
+PATCH http://127.0.0.1:8000/api/leads/4/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzg3MzMzLCJpYXQiOjE3OTM3ODcwMzMsImp0aSI6IjNjN2ZmMmMwYTU2MTQ2ZDZhMDEzZWEzZjMzOWYwMjU1IiwidXNlcl9pZCI6IjIifQ.httJuB6MFUhMF19Fp6Ags-pgxTuVvZnRoG0WC-zhnPA
+
+{
+    "name":"jain Christo"
+}
+
+#Api call for deleting id=4
+###
+DELETE http://127.0.0.1:8000/api/leads/4/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzg3MzMzLCJpYXQiOjE3OTM3ODcwMzMsImp0aSI6IjNjN2ZmMmMwYTU2MTQ2ZDZhMDEzZWEzZjMzOWYwMjU1IiwidXNlcl9pZCI6IjIifQ.httJuB6MFUhMF19Fp6Ags-pgxTuVvZnRoG0WC-zhnPA
