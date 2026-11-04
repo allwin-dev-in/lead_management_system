@@ -1,0 +1,62 @@
+#======== Accounts Endpoints ==========#
+
+#Api call for adding user
+###
+POST http://127.0.0.1:8000/api/accounts/register/
+Content-Type: application/json
+
+{
+    "username":"user456",
+    "password":"password",
+    "email":"user456@gmail.com",
+    "phone":"98744155656"
+}
+
+
+#Api call for Generating JWT
+###
+POST http://127.0.0.1:8000/api/accounts/login/
+Content-Type: application/json
+
+{
+    "username":"user456",
+    "password":"password"
+}
+
+
+
+#Api call for Refeshing JWT
+###
+POST http://127.0.0.1:8000/api/accounts/token/refresh/
+Content-Type: application/json
+
+{
+    "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5Mzc4NjM2MiwiaWF0IjoxNzkzNjk5OTYyLCJqdGkiOiIzYjMyNDUzNGYwMzM0ZGQzOGRkMzc3ZTcyNzFjODgwNiIsInVzZXJfaWQiOiIyIn0.HeLn_KNRbR41gDFespY69EWudbFES_IKILe5QEPv41o"
+}
+
+
+#Api call for Viewing Profile details
+###
+GET http://127.0.0.1:8000/api/accounts/profile/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzAxMDU2LCJpYXQiOjE3OTM3MDA3NTYsImp0aSI6ImZjZDlmOWY1OGUwZjRjMGZiYzdjNzRmNDYxNTY0NjhhIiwidXNlcl9pZCI6IjIifQ.h3SV0A0n1_ytNXJwhLfPe-kpGS0cj1vLjYbFHJpfFTU
+
+
+#===== Leads Endpoints =====#
+
+#Api call for adding new leads
+###
+POST http://127.0.0.1:8000/api/leads/create/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzg2MTc0LCJpYXQiOjE3OTM3ODU4NzQsImp0aSI6IjM4MDRiZGU3OTNiNTQ1OWVhZDllOTU5MDk2ZDVlMzhkIiwidXNlcl9pZCI6IjMifQ.cWlRgElpKS47gVSHuT9fFLl4w4d1gHFFxtwGFIkdz68
+
+{
+    "name": "jain antony",
+    "email": "jain@gmail.com",
+    "phone": "82858798654",
+    "company": "G tech It solutions",
+    "source": "Social Media",
+    "status": "Interested",
+    "description": "Interested in our services"
+}
+

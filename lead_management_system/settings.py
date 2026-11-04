@@ -41,6 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "rest_framework",
+    "rest_framework_simplejwt",
+    "accounts",
+    "leads",
+
 ]
 
 MIDDLEWARE = [
@@ -82,15 +87,16 @@ WSGI_APPLICATION = 'lead_management_system.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-DATABASAES={
-    'ENGINE':'django.db.backends.mysql',
-    'HOST':'localhost',
-    'DATABASE':'',
-    'NAME':'root',
-    'PASSWORD':os.getenv("MYSQL_password")
-
-    
+DATABASES={
+    'default':{
+        'ENGINE':'django.db.backends.mysql',
+        'HOST':'localhost',
+        'NAME':'lead_management_system_db',
+        'USER':'root',
+        'PASSWORD':os.getenv("MYSQL_password"),
+        'PORT':'3306'
     }
+}
 
 
 # Password validation
@@ -138,3 +144,6 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+
+AUTH_USER_MODEL="accounts.User"
