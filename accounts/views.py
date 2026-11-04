@@ -2,6 +2,9 @@ from django.shortcuts import render
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import authentication,permissions
+
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from accounts.models import User
 from accounts.serializers import UserSerializer
@@ -21,7 +24,10 @@ class SignupView(APIView):
             return Response(serializer_instance.errors)
 
 class ProfileDetailView(APIView):
+    authentication_classes=[JWTAuthentication]
+    permission_classes=[permissions.IsAuthenticated]
+
     def get(self,request):
-        qs=User.objects.filter(username=request.user)
-        ser_inst=UserSerializer(qs,many=True)
+        print(request.user)
+        ser_inst=UserSerializer(request.user)
         return Response(data=ser_inst.data)

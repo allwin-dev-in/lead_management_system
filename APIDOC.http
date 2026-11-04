@@ -39,8 +39,7 @@ Content-Type: application/json
 ###
 GET http://127.0.0.1:8000/api/accounts/profile/
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzAxMDU2LCJpYXQiOjE3OTM3MDA3NTYsImp0aSI6ImZjZDlmOWY1OGUwZjRjMGZiYzdjNzRmNDYxNTY0NjhhIiwidXNlcl9pZCI6IjIifQ.h3SV0A0n1_ytNXJwhLfPe-kpGS0cj1vLjYbFHJpfFTU
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzg4NjY3LCJpYXQiOjE3OTM3ODgzNjcsImp0aSI6ImQyNTkxNGM2NTc4ZjRlMGI4YTAyNTg1ZTIxZTQ4M2ZlIiwidXNlcl9pZCI6IjIifQ.KjyXdnodG-ullgraIcYd-LZJjkGlTpJJmCsYNsYnxwI
 
 #===== Leads Endpoints =====#
 
